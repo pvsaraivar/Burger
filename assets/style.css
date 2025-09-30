@@ -199,6 +199,119 @@ header .menu-icon div {
   border-right: 20px solid transparent;
 }
 
+/* PAYMENT SECTION */
+.payment-section {
+  background-color: #1F1F1F;
+  padding: 80px 0;
+  margin-top: 50px;
+}
+
+.payment-section .title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.payment-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  background-color: #2B2B2B;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  padding: 15px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.pix-button {
+  background-color: #000000;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  width: 100%;
+}
+
+.pix-button:hover {
+  opacity: 0.8;
+}
+
+.pix-qrcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  display: none;
+}
+
+.pix-qrcode-container.active {
+  display: flex;
+}
+
+#pixQrCode {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#pixCopyPaste {
+  background-color: #2B2B2B;
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+  word-break: break-all;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pix-status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.pix-status.pending {
+  background-color: #FFC107;
+  color: #000;
+}
+
+.pix-status.success {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.pix-status.error {
+  background-color: #F44336;
+  color: #fff;
+}
+
 /* PRODUCTS */
 
 .products-grid {
