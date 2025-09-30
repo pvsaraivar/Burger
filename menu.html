@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Clau Burger</title>
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Clau <span>•</span> Burger</a>
+      </div>
+        <nav>
+          <ul class="leftside">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="menu.html" class="active">Burger</a></li>
+            <li><a href="">Contato</a></li>
+          </ul>
+            <div class="rightside">
+              <a href="menu.html" class="button">Fazer pedido</a>
+            </div>
+        </nav>
+          <div class="menu">
+            <div class="menu-icon">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+    </div>
+  </header>
+
+  <section class="menu-hero">
+    <div class="container">
+      <h1>Escolha seu Hambúrguer</h1>
+      <p>Todos os nossos hambúrgueres são preparados na hora com ingredientes frescos e de alta qualidade.</p>
+    </div>
+  </section>
+
+  <section class="menu-categories">
+    <div class="container">
+      <div class="category-buttons">
+        <button class="category-button active" data-category="all">Todos</button>
+        <button class="category-button" data-category="tradicional">Tradicional</button>
+        <button class="category-button" data-category="premium">Premium</button>
+        <button class="category-button" data-category="vegetariano">Vegetariano</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <main>
+      <div class="container">
+        <div class="products-grid">
+          <div class="product-item" data-category="tradicional">
+            <div class="warning">Promoção</div>
+            <div class="photo">
+              <img src="assets/burgers/burger1.png" alt="Tom Burger">
+            </div>
+            <div class="info">
+              <div class="product-category">Tradicional</div>
+              <div class="product-name">Tom Burger</div>
+              <div class="product-description">Pão brioche, 180g de carne, queijo cheddar, bacon crocante, alface e molho especial</div>
+              <div class="product-price">R$ 25,50</div>
+              <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          
+          <div class="product-item" data-category="tradicional">
+            <div class="photo">
+              <img src="assets/burgers/burger2.png" alt="Dk Burger">
+            </div>
+            <div class="info">
+              <div class="product-category">Tradicional</div>
+              <div class="product-name">Dk Burger</div>
+              <div class="product-description">Pão australiano, 160g de carne, queijo prato, cebola caramelizada e maionese da casa</div>
+              <div class="product-price">R$ 25,50</div>
+              <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          
+          <div class="product-item" data-category="premium">
+            <div class="photo">
+              <img src="assets/burgers/burger3.png" alt="PV Burger">
+            </div>
+            <div class="info">
+              <div class="product-category">Premium</div>
+              <div class="product-name">PV Burger</div>
+              <div class="product-description">Pão brioche, 200g de carne, queijo gorgonzola, rúcula, tomate e molho pesto</div>
+              <div class="product-price">R$ 32,90</div>
+              <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          
+          <div class="product-item" data-category="premium">
+            <div class="photo">
+              <img src="assets/burgers/burger4.png" alt="Beni Burger">
+            </div>
+            <div class="info">
+              <div class="product-category">Premium</div>
+              <div class="product-name">Beni Burger</div>
+              <div class="product-description">Pão australiano, 180g de carne, queijo suíço, cogumelos salteados e maionese trufada</div>
+              <div class="product-price">R$ 34,90</div>
+              <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          
+          <div class="product-item" data-category="tradicional">
+            <div class="photo">
+              <img src="assets/burgers/burger2.png" alt="Gabriel Burger">
+            </div>
+            <div class="info">
+              <div class="product-category">Tradicional</div>
+              <div class="product-name">Gabriel Burger</div>
+              <div class="product-description">Pão brioche, 160g de carne, queijo cheddar, picles, cebola roxa e ketchup</div>
+              <div class="product-price">R$ 25,50</div>
+              <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          
+          <div class="product-item" data-category="vegetariano">
+            <div class="photo">
+              <img src="assets/burgers/burger1.png" alt="R2D2 Burger">
+            </div>
+            <div class="info">
+              <div class="product-category">Vegetariano</div>
+              <div class="product-name">R2D2 Burger</div>
+              <div class="product-description">Pão integral, burger de grão de bico, queijo vegano, alface, tomate e maionese vegana</div>
+              <div class="product-price">R$ 28,90</div>
+              <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="cart-section">
+    <div class="container">
+      <div class="cart-container">
+        <h2>Seu Carrinho</h2>
+        <div id="cart-items">
+          <p class="empty-cart">Seu carrinho está vazio</p>
+        </div>
+        <div class="cart-total">
+          <p>Total: <span id="cart-total-value">R$ 0,00</span></p>
+        </div>
+        <button id="checkout-button" class="checkout-button">Finalizar Pedido</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Clau <span>•</span> Burger</a>
+      </div>
+      <div class="copyrights">Criado por Paulo Victor.</div>
+    </div>
+  </footer>
+
+  <script src="assets/menu.js"></script>
+</body>
+</html>
