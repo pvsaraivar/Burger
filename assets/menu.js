@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (cart.length === 0) {
             cartItems.innerHTML = '<p class="empty-cart">Seu carrinho está vazio</p>';
             cartTotalValue.textContent = 'R$ 0,00';
+            checkoutButton.style.opacity = '0.5';
+            checkoutButton.style.pointerEvents = 'none';
             return;
         }
         
@@ -96,8 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
             cartItems.appendChild(cartItemElement);
         });
         
+        // Salva o carrinho no localStorage para uso na página de pagamento
+        localStorage.setItem('cartItems', JSON.stringify(cart));
+        
         cartTotalValue.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
         
+        checkoutButton.style.opacity = '1';
+        checkoutButton.style.pointerEvents = 'auto';
         // Adiciona eventos aos botões de quantidade e remoção
         document.querySelectorAll('.quantity-btn.decrease').forEach(button => {
             button.addEventListener('click', () => {
@@ -128,15 +135,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Finalizar pedido
-    checkoutButton.addEventListener('click', () => {
+    // Finalizar pedido - Agora apenas redireciona para a página de pagamento
+    checkoutButton.addEventListener('click', (e) => {
         if (cart.length === 0) {
+            e.preventDefault();
             alert('Seu carrinho está vazio!');
             return;
         }
         
-        alert('Pedido finalizado com sucesso! Em breve você receberá seu pedido.');
-        cart = [];
-        updateCart();
+        // Salva o carrinho no localStorage antes de redirecionar
+        localStorage.setItem('cartItems', JSON.stringify(cart));
     });
 });

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Clau Burger</title>
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Clau <span>•</span> Burger</a>
+      </div>
+        <nav>
+          <ul class="leftside">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="menu.html">Burger</a></li>
+            <li><a href="">Contato</a></li>
+          </ul>
+            <div class="rightside">
+              <a href="menu.html" class="button">Fazer pedido</a>
+            </div>
+        </nav>
+          <div class="menu">
+            <div class="menu-icon">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+    </div>
+  </header>
+
+  <section class="payment-page">
+    <div class="container">
+      <h1>Finalizar Pagamento</h1>
+      <div class="order-summary">
+        <h2>Resumo do Pedido</h2>
+        <div id="order-items">
+          <!-- Itens do pedido serão inseridos via JavaScript -->
+        </div>
+        <div class="order-total">
+          <p>Total: <span id="order-total-value">R$ 0,00</span></p>
+        </div>
+      </div>
+
+      <div class="payment-options">
+        <h2>Escolha a forma de pagamento</h2>
+        <div class="payment-methods">
+          <div class="payment-method" data-method="credit">
+            <input type="radio" id="credit" name="payment-method" value="credit">
+            <label for="credit">
+              <div class="method-icon credit-icon">💳</div>
+              <div class="method-name">Cartão de Crédito</div>
+            </label>
+            <div class="method-form credit-form">
+              <div class="form-group">
+                <label for="credit-number">Número do Cartão</label>
+                <input type="text" id="credit-number" placeholder="0000 0000 0000 0000">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="credit-expiry">Validade</label>
+                  <input type="text" id="credit-expiry" placeholder="MM/AA">
+                </div>
+                <div class="form-group">
+                  <label for="credit-cvv">CVV</label>
+                  <input type="text" id="credit-cvv" placeholder="123">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="credit-name">Nome no Cartão</label>
+                <input type="text" id="credit-name">
+              </div>
+              <div class="form-group">
+                <label for="credit-installments">Parcelas</label>
+                <select id="credit-installments">
+                  <option value="1">1x sem juros</option>
+                  <option value="2">2x sem juros</option>
+                  <option value="3">3x sem juros</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-method" data-method="debit">
+            <input type="radio" id="debit" name="payment-method" value="debit">
+            <label for="debit">
+              <div class="method-icon debit-icon">💳</div>
+              <div class="method-name">Cartão de Débito</div>
+            </label>
+            <div class="method-form debit-form">
+              <div class="form-group">
+                <label for="debit-number">Número do Cartão</label>
+                <input type="text" id="debit-number" placeholder="0000 0000 0000 0000">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="debit-expiry">Validade</label>
+                  <input type="text" id="debit-expiry" placeholder="MM/AA">
+                </div>
+                <div class="form-group">
+                  <label for="debit-cvv">CVV</label>
+                  <input type="text" id="debit-cvv" placeholder="123">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="debit-name">Nome no Cartão</label>
+                <input type="text" id="debit-name">
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-method" data-method="pix">
+            <input type="radio" id="pix" name="payment-method" value="pix">
+            <label for="pix">
+              <div class="method-icon pix-icon">📱</div>
+              <div class="method-name">PIX</div>
+            </label>
+            <div class="method-form pix-form">
+              <div class="pix-info">
+                <p>Ao confirmar, você receberá um QR Code para pagamento via PIX.</p>
+              </div>
+              <div id="pix-qrcode-container" class="pix-qrcode-container" style="display: none;">
+                <div id="pix-qrcode"></div>
+                <div id="pix-copy-paste"></div>
+                <p>Escaneie o QR Code ou copie o código PIX para realizar o pagamento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="customer-info">
+        <h2>Informações para Entrega</h2>
+        <div class="form-group">
+          <label for="customer-name">Nome Completo</label>
+          <input type="text" id="customer-name" required>
+        </div>
+        <div class="form-group">
+          <label for="customer-phone">Telefone</label>
+          <input type="tel" id="customer-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="customer-address">Endereço</label>
+          <input type="text" id="customer-address" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="customer-number">Número</label>
+            <input type="text" id="customer-number" required>
+          </div>
+          <div class="form-group">
+            <label for="customer-complement">Complemento</label>
+            <input type="text" id="customer-complement">
+          </div>
+        </div>
+      </div>
+
+      <button id="confirm-payment" class="confirm-payment-button">Confirmar Pagamento</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Clau <span>•</span> Burger</a>
+      </div>
+      <div class="copyrights">Criado por Paulo Victor.</div>
+    </div>
+  </footer>
+
+  <script src="assets/payment.js"></script>
+</body>
+</html>
