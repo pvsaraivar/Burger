@@ -51,14 +51,15 @@
     <div class="title">Pesquise o seu Clau Burger<br>favorito</div>
     <div class="side">
       <div class="leftside">
-        <input type="search" placeholder="Digite o nome do seu Clau Burger">
+        <input type="search" id="search-input" placeholder="Digite o nome do seu Clau Burger">
       </div>
       <div class="rightside">
-        <select>
-          <option value="">Selecionar categoria</option>
-          <option value="Burgers">Burger</option>
-          <option value="Burgers">Vegetariano</option>
-          <option value="Burgers">Kids</option>
+        <select id="category-select">
+          <option value="all">Todas as categorias</option>
+          <option value="tradicional">Tradicional</option>
+          <option value="premium">Premium</option>
+          <option value="especial">Especial</option>
+          <option value="kids">Kids</option>
         </select>  
       </div>
     </div>
@@ -180,6 +181,8 @@
   </div>
 </footer>
 
+<script src="assets/home.js"></script>
+<script src="assets/main.js"></script>
 
 </body>
 </html>
